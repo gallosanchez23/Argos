@@ -1,0 +1,23 @@
+version: '3.3'
+
+volumes:
+  postgres_data:
+
+services:
+  postgres:
+    image: postgres:12.0
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    image: argos/development:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/argos
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
