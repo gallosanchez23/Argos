@@ -12,6 +12,5 @@ RSpec.describe User, type: :model do
 
 	context 'associations' do
 		it { should have_many(:accounts) }
-		it { should have_many(:transactions) }
 	end
 end

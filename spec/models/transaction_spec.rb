@@ -12,12 +12,14 @@ RSpec.describe Transaction, type: :model do
 	end
 
 	context 'associations' do
-		it { should belong_to(:user) }
 		it { should belong_to(:account) }
 		it { should belong_to(:currency) }
 	end
 
 	context 'definitions' do
-		it { should define_enum_for(:type).with([:payment, :purchase, :loan]) }
+		it do
+			should define_enum_for(:type).
+				with_values([:payment, :purchase, :loan])
+		end
 	end
 end

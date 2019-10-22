@@ -12,12 +12,15 @@ RSpec.describe Account, type: :model do
 	end
 
 	context 'associations' do
-		it { should has_many(:cards) }
-		it { should has_many(:transactions) }
+		it { should have_many(:cards) }
+		it { should have_many(:transactions) }
 		it { should belong_to(:user) }
 	end
 
 	context 'definitions' do
-		it { should define_enum_for(:type).with([:debit, :credit, :cash]) }
+		it do
+			should define_enum_for(:type).
+				with_values([:debit, :credit, :cash])
+		end
 	end
 end
