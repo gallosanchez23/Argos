@@ -4,8 +4,7 @@ FactoryBot.define do
     quantity    { 100.00 }
     type        { 1 }
     datetime    { FFaker::Time.datetime }
-    user_id     { FFaker::IdentificationESCO.id }
-    account_id  { FFaker::IdentificationESCO.id }
-    currency_id { FFaker::IdentificationESCO.id }
+    account		  { FactoryBot.create(:account) }
+    currency		{ FactoryBot.create(:currency) }
   end
 end

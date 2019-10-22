@@ -4,7 +4,6 @@ FactoryBot.define do
     bank    { FFaker::Bank.iban }
     number  { FFaker::Bank.card_number }
     type    { 1 }
-    card_id { FFaker::IdentificationESCO.id }
-    user_id { FFaker::IdentificationESCO.id }
+    user    { FactoryBot.create(:user) }
   end
 end
