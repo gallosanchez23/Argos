@@ -17,6 +17,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'slim-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -36,6 +37,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'shoulda-matchers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
