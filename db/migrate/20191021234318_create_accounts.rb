@@ -5,7 +5,6 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
       t.string     :bank
       t.string     :number
       t.integer    :type
-      t.references :card
       t.references :user
 
       t.timestamps

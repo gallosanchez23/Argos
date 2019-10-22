@@ -20,11 +20,9 @@ ActiveRecord::Schema.define(version: 2019_10_22_005859) do
     t.string "bank"
     t.string "number"
     t.integer "type"
-    t.bigint "card_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["card_id"], name: "index_accounts_on_card_id"
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
@@ -51,14 +49,12 @@ ActiveRecord::Schema.define(version: 2019_10_22_005859) do
     t.float "quantity"
     t.integer "type"
     t.datetime "datetime"
-    t.bigint "user_id"
     t.bigint "account_id"
     t.bigint "currency_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_transactions_on_account_id"
     t.index ["currency_id"], name: "index_transactions_on_currency_id"
-    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

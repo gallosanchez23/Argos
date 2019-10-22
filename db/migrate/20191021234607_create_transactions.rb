@@ -5,7 +5,6 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.float      :quantity
       t.integer    :type
       t.timestamp  :datetime
-      t.references :user
       t.references :account
       t.references :currency
 
