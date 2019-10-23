@@ -9,5 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :private do
+  end
+
   root to: redirect('/users/sign_in')
 end
