@@ -1,0 +1,16 @@
+#sign-in-container.container-fluid.h-100
+  #sign-in-main-row.row.justify-content-center.h-100
+    .col-sm-4 style='text-align: center;'
+      #sign-in-form-container
+        h1#sign-in-title
+          | Log in
+
+        = devise_error_messages!
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field.form-group
+            = f.text_field :username, class: 'form-control', placeholder: 'Username', autofocus: true
+
+          .field.form-group
+            = f.password_field :password, class: 'form-control', placeholder: 'Password'
+
+          = f.submit 'Log in', class: 'btn btn-sign-in'

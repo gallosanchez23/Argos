@@ -14,5 +14,31 @@
  *= require_self
  */
 
- @import "bootstrap";
- @import "font-awesome";
+@import "bootstrap";
+@import "font-awesome";
+
+html {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+	font-family: Helvetica;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-sign-in {
+	background: rgba(252, 125, 180, 1);
+	color: #fff;
+
+	&:focus,
+	&:hover,
+	&:active {
+		background: rgba(214, 116, 152, 1);
+		color: #fff;
+	}
+}
